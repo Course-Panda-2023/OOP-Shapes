@@ -17,8 +17,8 @@ Dictionary<string, Action> Operations = new Dictionary<string, Action>()
 
 string MostCloseOption(string option)
 {
-   //Operations.Keys
-   return ""
+    //Operations.Keys
+    return "";
 }
 
 void Exit()
