@@ -40,7 +40,11 @@ namespace Shapes
         public void Delete(Shape shape)
         {
             if (shape is null) return;
-            if (shapes.Count == 0) return;
+            if (shapes.Count == 0)
+            {
+                Console.WriteLine("Three is no shape exists");
+                return;
+            }
             ShapeFactory shapeFactory1 = new ShapeFactory();
             Shape newShape = shape;
             if (newShape == null) return;
@@ -72,7 +76,10 @@ namespace Shapes
 
         public void Update(int index)
         {
-            shapes[index].SetIsFilled(!shapes[index].GetIsFilled());
+            Shape shape = shapes[index];
+            bool isFilled = shape.GetIsFilled();
+            Console.WriteLine($"from {isFilled} to {!isFilled}");
+            shapes[index].SetIsFilled(!isFilled);
         }
     }
 }

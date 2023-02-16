@@ -4,8 +4,9 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 ShapesModel shapeModel = new ShapesModel();
-ShapeFactory shapeFactory = new ShapeFactory(); 
-Dictionary<string, Action> Operations = new Dictionary<string, Action>()
+ShapeFactory shapeFactory = new ShapeFactory();
+var comparer = StringComparer.OrdinalIgnoreCase;
+Dictionary<string, Action> Operations = new Dictionary<string, Action>(comparer)
 {
     { "Create", CreateNewShape },
     { "Update", UpdateShape },
@@ -15,16 +16,11 @@ Dictionary<string, Action> Operations = new Dictionary<string, Action>()
     {"Exit", Exit }
 };
 
-string MostCloseOption(string option)
-{
-    //Operations.Keys
-    return "";
-}
-
 void Exit()
 {
     System.Environment.Exit(1);
 }
+
 void AddAndPrintAll()
 {
     foreach(string shape in shapeFactory.shapesNames)
@@ -56,12 +52,6 @@ Shape GetSomeValidShape()
     return shape;
 }
 
-/// <summary>
-/// util function that check if two string are equal ignoring the case
-/// </summary>
-/// <param name="s1">a string</param>
-/// <param name="s2">another string</param>
-/// <returns></returns>
 bool IsEqualIgnoreCases(string s1, HashSet<string> s2)
 {
     foreach (string s in s2)
@@ -127,16 +117,21 @@ void UpdateShape()
     Console.WriteLine($"Enter an idex from 0 to {shapeModel.GetLength() - 1}");
     int input = GetInputNumber();
     shapeModel.Update(input);
-    Console.WriteLine("Updated successfully!!!");
+    Console.Write($"Updated successfully {input}");
 }
 
 void DeleteShape() 
 {
     Console.WriteLine("Delete");
+    if (shapeModel.GetLength() == 0)
+    {
+        Console.WriteLine("Not Yet! There are no shapes created!");
+        return;
+    }
     Shape shape = GetSomeValidShape();
 
     shapeModel.Delete(shape);
-    Console.WriteLine("Deleted successfully!!!");
+    Console.WriteLine($"Deleted successfully {shape}");
 }
 
 void PrintShape() 
