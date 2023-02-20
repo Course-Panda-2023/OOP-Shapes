@@ -1,0 +1,8 @@
+C:\Users\mamag3\Desktop\AmitNadam\CSharp-Shapes\Shapes\Shapes\obj\Debug\Shapes.csproj.AssemblyReference.cache
+C:\Users\mamag3\Desktop\AmitNadam\CSharp-Shapes\Shapes\Shapes\obj\Debug\Shapes.csproj.SuggestedBindingRedirects.cache
+C:\Users\mamag3\Desktop\AmitNadam\CSharp-Shapes\Shapes\Shapes\obj\Debug\Shapes.csproj.CoreCompileInputs.cache
+C:\Users\mamag3\Desktop\AmitNadam\CSharp-Shapes\Shapes\Shapes\bin\Debug\Shapes.exe.config
+C:\Users\mamag3\Desktop\AmitNadam\CSharp-Shapes\Shapes\Shapes\bin\Debug\Shapes.exe
+C:\Users\mamag3\Desktop\AmitNadam\CSharp-Shapes\Shapes\Shapes\bin\Debug\Shapes.pdb
+C:\Users\mamag3\Desktop\AmitNadam\CSharp-Shapes\Shapes\Shapes\obj\Debug\Shapes.exe
+C:\Users\mamag3\Desktop\AmitNadam\CSharp-Shapes\Shapes\Shapes\obj\Debug\Shapes.pdb
