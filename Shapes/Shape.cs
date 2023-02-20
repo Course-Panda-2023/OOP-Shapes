@@ -16,8 +16,16 @@ namespace Shapes
         /// </summary>
         void Draw();
 
+        /// <summary>
+        /// set the property is filled
+        /// </summary>
+        /// <param name="isFilled">is a filled shape</param>
         void SetIsFilled(bool isFilled);
 
+        /// <summary>
+        /// gets the attribute of whether or not is true or false
+        /// </summary>
+        /// <returns>is filled</returns>
         bool GetIsFilled();
     }
 }
