@@ -8,4 +8,4 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Shapes
-build_property.ProjectDir = D:\pandaCourse\OOP-ShapesByErez\Shapes\Shapes\
+build_property.ProjectDir = D:\pandaCourse\OOP\OOP-ShapesByErez\Shapes\Shapes\

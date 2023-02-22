@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\pandaCourse\\OOP-ShapesByErez\\Shapes\\Shapes\\Shapes.csproj": {}
+    "D:\\pandaCourse\\OOP\\OOP-ShapesByErez\\Shapes\\Shapes\\Shapes.csproj": {}
   },
   "projects": {
-    "D:\\pandaCourse\\OOP-ShapesByErez\\Shapes\\Shapes\\Shapes.csproj": {
+    "D:\\pandaCourse\\OOP\\OOP-ShapesByErez\\Shapes\\Shapes\\Shapes.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\pandaCourse\\OOP-ShapesByErez\\Shapes\\Shapes\\Shapes.csproj",
+        "projectUniqueName": "D:\\pandaCourse\\OOP\\OOP-ShapesByErez\\Shapes\\Shapes\\Shapes.csproj",
         "projectName": "Shapes",
-        "projectPath": "D:\\pandaCourse\\OOP-ShapesByErez\\Shapes\\Shapes\\Shapes.csproj",
+        "projectPath": "D:\\pandaCourse\\OOP\\OOP-ShapesByErez\\Shapes\\Shapes\\Shapes.csproj",
         "packagesPath": "C:\\Users\\owner\\.nuget\\packages\\",
-        "outputPath": "D:\\pandaCourse\\OOP-ShapesByErez\\Shapes\\Shapes\\obj\\",
+        "outputPath": "D:\\pandaCourse\\OOP\\OOP-ShapesByErez\\Shapes\\Shapes\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\owner\\AppData\\Roaming\\NuGet\\NuGet.Config",
