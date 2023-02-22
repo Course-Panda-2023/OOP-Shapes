@@ -64,8 +64,41 @@ static void AddShape(List<Shape> demoShapes, ref List<Shape> shapes)
 static void UpdateShape(ref List<Shape> shapes)
 {
     Shape shape = GetShape(shapes);
-    Console.WriteLine("Now enter the parameters you want to update.");
-    shape = UpdatedShape(shape);
+    Console.WriteLine("Enter '1' to update shapes filling.");
+    Console.WriteLine("Enter '2' to update shapes representative character.");
+    Console.WriteLine("Enter '3' to update shapes side length.");
+    if (shape is Rectangle || shape is Trapezoid || shape is Parallelogram)
+    {
+        Console.WriteLine("Enter '4' to update shapes width length.");
+    }
+    int input = Convert.ToInt32(Console.ReadLine());
+    switch (input)
+    {
+        case 1:
+            Console.WriteLine("Enter '1' if the shape is filled and '0' if not.");
+            bool fill1 = Convert.ToBoolean(Convert.ToInt32(Console.ReadLine()));
+            shape.UpdateFull(fill1);
+            break;
+        case 2:
+            Console.WriteLine("Enter the character you want to use in the printing.");
+            string temp = Console.ReadLine();
+            char representativeChar = GetRepChar(temp);
+            shape.UpdateRepChar(representativeChar);
+            break;
+        case 3:
+            Console.WriteLine("Enter the length of the side of the shape.");
+            int side = Convert.ToInt32(Console.ReadLine());
+            shape.Updateheigth(side);
+            break;
+        case 4:
+            Console.WriteLine("Enter the length of the width of the shape.");
+            int width1 = Convert.ToInt32(Console.ReadLine());
+            shape.UpdateWidth(width1);
+            break;
+        default:
+            Console.WriteLine("The input you entered is wrong.");
+            break;
+    }
 }
 
 static Shape GetShape(List<Shape> shapes)

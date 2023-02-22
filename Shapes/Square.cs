@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,14 +11,14 @@ namespace Shapes
     {
         protected int side;
 
-        public Square(bool full, char representativeChar, int side) : base(full, representativeChar)
+        public Square(bool isFull, char representativeChar, int side) : base(isFull, representativeChar)
         {
             this.side = side;
         }
 
         public override void PrintShape()
         {
-            if (full)
+            if (isFull)
                 PrintFullShape();
             else
                 PrintEmptyShape();
@@ -29,7 +30,7 @@ namespace Shapes
             {
                 for (int j = 0; j < side; j++)
                 {
-                    Console.Write(representativeChar + " ");
+                    Console.Write($"{representativeChar} ");
                 }
                 Console.WriteLine();
             }
@@ -41,8 +42,8 @@ namespace Shapes
             {
                 for (int j = 0; j < side; j++)
                 {
-                    if (i == 0 || j == 0 || j == side - 1 || i == side - 1)
-                        Console.Write(representativeChar + " ");
+                    if (IsOutline(i, j, side, side))
+                        Console.Write($"{representativeChar} ");
                     else
                         Console.Write("  ");
                 }
@@ -52,9 +53,19 @@ namespace Shapes
 
         public override void Update(bool full, char representativeChar, int heigth, int width)
         {
-            this.full = full;
+            this.isFull = full;
             this.representativeChar = representativeChar;
             this.side = heigth;
+        }
+
+        public override void Updateheigth(int heigth)
+        {
+            this.side = heigth;
+        }
+
+        public override void UpdateWidth(int width)
+        {
+            throw new NotImplementedException();
         }
     }
 }

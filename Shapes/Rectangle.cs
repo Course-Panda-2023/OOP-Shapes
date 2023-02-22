@@ -10,14 +10,14 @@ namespace Shapes
     {
         protected int width;
 
-        public Rectangle(bool full, char representativeChar, int side, int width) : base(full, representativeChar, side)
+        public Rectangle(bool isFull, char representativeChar, int side, int width) : base(isFull, representativeChar, side)
         {
             this.width = width;
         }
 
         public override void PrintShape()
         {
-            if (full)
+            if (isFull)
                 PrintFullShape();
             else
                 PrintEmptyShape();
@@ -29,7 +29,7 @@ namespace Shapes
             {
                 for (int j = 0; j < width; j++)
                 {
-                    Console.Write(representativeChar + " ");
+                    Console.Write($"{representativeChar} ");
                 }
                 Console.WriteLine();
             }
@@ -41,8 +41,8 @@ namespace Shapes
             {
                 for (int j = 0; j < width; j++)
                 {
-                    if (i == 0 || j == 0 || j == width - 1 || i == side - 1)
-                        Console.Write(representativeChar + " ");
+                    if (IsOutline(i, j, width, side))
+                        Console.Write($"{representativeChar} ");
                     else
                         Console.Write("  ");
                 }
@@ -50,11 +50,8 @@ namespace Shapes
             }
         }
 
-        public override void Update(bool full, char representativeChar, int heigth, int width)
+        public override void UpdateWidth(int width)
         {
-            this.full = full;
-            this.representativeChar = representativeChar;
-            this.side = heigth;
             this.width = width;
         }
     }

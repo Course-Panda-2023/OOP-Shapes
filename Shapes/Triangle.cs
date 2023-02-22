@@ -10,14 +10,14 @@ namespace Shapes
     {
         protected int height;
 
-        public Triangle(bool full, char representativeChar, int height) : base(full, representativeChar)
+        public Triangle(bool isFull, char representativeChar, int height) : base(isFull, representativeChar)
         {
             this.height = height;
         }
 
         public override void PrintShape()
         {
-            if (full)
+            if (isFull)
                 PrintFullShape();
             else
                 PrintEmptyShape();
@@ -30,7 +30,7 @@ namespace Shapes
                 for (int j = height - i; j > 0; j--)
                     Console.Write(" ");
                 for (int j = 0; j <= i; j++)
-                    Console.Write(representativeChar + " ");
+                    Console.Write($"{representativeChar} ");
                 Console.WriteLine();
             }
         }
@@ -43,8 +43,8 @@ namespace Shapes
                     Console.Write(" ");
                 for (int j = 0; j <= i; j++)
                 {
-                    if (i == 0 || j == 0 || j == i || i == height - 1)
-                        Console.Write(representativeChar + " ");
+                    if (IsOutline(i, j, i + 1, height))
+                        Console.Write($"{representativeChar} ");
                     else
                         Console.Write("  ");
                 }
@@ -54,9 +54,19 @@ namespace Shapes
 
         public override void Update(bool full, char representativeChar, int heigth, int width)
         {
-            this.full = full;
+            this.isFull = full;
             this.representativeChar = representativeChar;
             this.height = heigth;
+        }
+
+        public override void Updateheigth(int heigth)
+        {
+            this.height = heigth;
+        }
+
+        public override void UpdateWidth(int width)
+        {
+            throw new NotImplementedException();
         }
     }
 }

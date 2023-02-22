@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,14 +12,14 @@ namespace Shapes
     {
         protected int upperBase;
 
-        public Trapezoid(bool full, char representativeChar, int side, int upperBase) : base(full, representativeChar, side)
+        public Trapezoid(bool isFull, char representativeChar, int side, int upperBase) : base(isFull, representativeChar, side)
         {
             this.upperBase = upperBase;
         }
 
         public override void PrintShape()
         {
-            if (full)
+            if (isFull)
                 PrintFullShape();
             else
                 PrintEmptyShape();
@@ -32,7 +33,7 @@ namespace Shapes
                 for (int k = height - i; k > 1; k--)
                     Console.Write("  ");
                 for (int j = 0; j < temp; j++)
-                    Console.Write(representativeChar + " ");
+                    Console.Write($"{representativeChar} ");
                 Console.WriteLine();
                 temp += 2;
             }
@@ -47,8 +48,8 @@ namespace Shapes
                     Console.Write("  ");
                 for (int j = 0; j < temp; j++)
                 {
-                    if (i == 0 || j == 0 || j == temp - 1 || i == height - 1)
-                        Console.Write(representativeChar + " ");
+                    if (IsOutline(i, j, temp, height))
+                        Console.Write($"{representativeChar} ");
                     else
                         Console.Write("  ");
                 }
@@ -59,10 +60,15 @@ namespace Shapes
 
         public override void Update(bool full, char representativeChar, int height, int upperBase)
         {
-            this.full = full;
+            this.isFull = full;
             this.representativeChar = representativeChar;
             this.height = height;
             this.upperBase = upperBase;
+        }
+
+        public override void UpdateWidth(int width)
+        {
+            this.upperBase = width;
         }
     }
 }

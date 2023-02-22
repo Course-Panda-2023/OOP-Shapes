@@ -8,11 +8,11 @@ namespace Shapes
 {
     public class Rhombus : Square
     {
-        public Rhombus(bool full, char representativeChar, int side) : base(full, representativeChar, side) { }
+        public Rhombus(bool isFull, char representativeChar, int side) : base(isFull, representativeChar, side) { }
 
         public override void PrintShape()
         {
-            if (full)
+            if (isFull)
                 PrintFullShape();
             else
                 PrintEmptyShape();
@@ -24,7 +24,7 @@ namespace Shapes
             {
                 for (int j = 0; j < side; j++)
                 {
-                    Console.Write(representativeChar + " ");
+                    Console.Write($"{representativeChar}  ");
                 }
                 Console.WriteLine();
                 for (int k = 0; k <= i; k++)
@@ -40,8 +40,8 @@ namespace Shapes
             {
                 for (int j = 0; j < side; j++)
                 {
-                    if (i == 0 || j == 0 || j == side - 1 || i == side - 1)
-                        Console.Write(representativeChar + "  ");
+                    if (IsOutline(i, j, side, side))
+                        Console.Write($"{representativeChar}  ");
                     else
                         Console.Write("   ");
                 }
