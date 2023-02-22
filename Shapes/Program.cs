@@ -79,7 +79,6 @@ namespace Shapes
                 Console.Write("Your Select: ");
                 choice = int.Parse(Console.ReadLine());
             }
-
         }
     }
 }
