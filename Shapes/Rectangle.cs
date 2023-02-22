@@ -1,6 +1,4 @@
-﻿using Shapes;
-
-namespace Shapes
+﻿namespace Shapes
 {
     /// <summary>
     /// class reresents a rectangle

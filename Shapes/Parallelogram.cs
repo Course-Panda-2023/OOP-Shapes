@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Shapes
+﻿namespace Shapes
 {
     /// <summary>
     /// class represents a parallelgram
@@ -37,8 +31,8 @@ namespace Shapes
                 {
                     Console.Write(new string('#', Height));
                 }
-                
-                
+
+
                 Console.WriteLine();
             }
         }
@@ -50,7 +44,7 @@ namespace Shapes
 
         public void SetIsFilled(bool isFilled)
         {
-            this.isFilled = isFilled; 
+            this.isFilled = isFilled;
         }
     }
 }

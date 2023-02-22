@@ -1,7 +1,4 @@
 ﻿using Shapes;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
 
 ShapesModel shapeModel = new ShapesModel();
 ShapeFactory shapeFactory = new ShapeFactory();
@@ -23,7 +20,7 @@ void Exit()
 
 void AddAndPrintAll()
 {
-    foreach(string shape in shapeFactory.shapesNames)
+    foreach (string shape in shapeFactory.shapesNames)
     {
         shapeModel.Add(shapeFactory.GetShape(shape));
     }
@@ -106,7 +103,7 @@ int GetInputNumber()
     return userInput;
 }
 
-void UpdateShape() 
+void UpdateShape()
 {
     Console.WriteLine("Update");
     if (shapeModel.GetLength() == 0)
@@ -120,7 +117,7 @@ void UpdateShape()
     Console.Write($"Updated successfully {input}");
 }
 
-void DeleteShape() 
+void DeleteShape()
 {
     Console.WriteLine("Delete");
     if (shapeModel.GetLength() == 0)
@@ -134,11 +131,11 @@ void DeleteShape()
     Console.WriteLine($"Deleted successfully {shape}");
 }
 
-void PrintShape() 
+void PrintShape()
 {
     Console.WriteLine("Print all created shapes");
     if (shapeModel is null) return;
-    shapeModel.DrawAll();    
+    shapeModel.DrawAll();
 }
 
 void PrintAllKeys()

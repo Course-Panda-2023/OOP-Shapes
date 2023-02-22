@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Runtime.InteropServices;
 
 namespace Shapes
 {
@@ -27,7 +21,7 @@ namespace Shapes
         public void Add(params Shape[] shapes)
         {
             Span<Shape> shapesAsSpan = shapes.AsSpan();
-            foreach(var shape in shapesAsSpan)
+            foreach (var shape in shapesAsSpan)
             {
                 this.shapes.Add(shape);
             }
@@ -49,14 +43,14 @@ namespace Shapes
             Shape newShape = shape;
             if (newShape == null) return;
             Shape deletedShape = null;
-            foreach(var shapeAsVar in shapes)
+            foreach (var shapeAsVar in shapes)
             {
                 if (shapeAsVar.GetType() == newShape.GetType())
                 {
                     deletedShape = shapeAsVar;
-                }   
+                }
             }
-            if (deletedShape!= null)
+            if (deletedShape != null)
             {
                 shapes.Remove(deletedShape);
             }
