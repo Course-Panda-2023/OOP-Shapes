@@ -15,13 +15,14 @@ namespace Shapes
     };
     class HelperFunctions
     {
+        const char YES = 'y';
         private static void updateFields(Shape shape)
         {
             Console.WriteLine("Do you want to fill the shape in the print? y/n");
-            shape.Fill = char.Parse(Console.ReadLine()) == 'y' ? true : false;
+            shape.Fill = char.Parse(Console.ReadLine()) == YES ? true : false;
             Console.WriteLine("Do you want to change the char to fill with? y/n (default: #)");
             char ch = char.Parse(Console.ReadLine());
-            bool toFillWith = ch == 'y' ? true : false;
+            bool toFillWith = ch == YES ? true : false;
             if (toFillWith)
             {
                 Console.WriteLine("Type the new char you want to change to:");
@@ -33,34 +34,7 @@ namespace Shapes
         {
             FactoryShape factoryShape = new FactoryShape();
             Shape shape = factoryShape.GetShape(shapeType);
-            switch (shapeType)
-                {
-                case (ShapeType.Rectangle):
-                    Console.WriteLine("Type width:");
-                    ((Rectangle)shape).Width = int.Parse(Console.ReadLine());
-                    Console.WriteLine("Type height:");
-                    ((Rectangle)shape).Height = int.Parse(Console.ReadLine());
-                    break;
-                case (ShapeType.Square):
-                    Console.WriteLine("Type size:");
-                    int size = int.Parse(Console.ReadLine());
-                    ((Square)shape).Size = size;
-                    break;
-                case (ShapeType.Trapezoid):
-                    Console.WriteLine("Type upper base:");
-                    ((Trapezoid)shape).UpperBase = int.Parse(Console.ReadLine());
-                    Console.WriteLine("Type height:");
-                    ((Trapezoid)shape).Height = int.Parse(Console.ReadLine());
-                    break;
-                case (ShapeType.Triangle):
-                    Console.WriteLine("Type height:");
-                    ((Triangle)shape).Height = int.Parse(Console.ReadLine());
-                    break;
-                case (ShapeType.Rhombus):
-                    Console.WriteLine("Type half height:");
-                    ((Rhombus)shape).HalfHeight = int.Parse(Console.ReadLine());
-                    break;
-            }
+            shape.createShape();
             updateFields(shape);
             return shape;
         }
@@ -111,24 +85,7 @@ namespace Shapes
         public static void UpdateShape(Shape shape, ShapeType shapeType)
         {
             updateFields(shape);
-            switch (shapeType)
-            {
-                case ShapeType.Rectangle:
-                    ((Rectangle)shape).update();
-                    break;
-                case ShapeType.Square:
-                    ((Square)shape).update();
-                    break;
-                case ShapeType.Triangle:
-                    ((Triangle)shape).update();
-                    break;
-                case ShapeType.Trapezoid:
-                    ((Trapezoid)shape).update();
-                    break;
-                case ShapeType.Rhombus:
-                    ((Rhombus)shape).update();
-                    break;
-            }
+            shape.update();
         }
     }
 }

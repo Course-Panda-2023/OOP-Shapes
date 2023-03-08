@@ -8,10 +8,10 @@ namespace Shapes
 {
     abstract class Shape
     {
-        protected bool fill;
+        protected bool _isFilled;
         public bool Fill
         {
-            set { fill = value; }
+            set { _isFilled = value; }
         }
         protected char fillWithChar;
         public char FillWithChar
@@ -21,11 +21,12 @@ namespace Shapes
 
         public Shape()
         {
-            this.fill = true;
+            this._isFilled = true;
             this.fillWithChar = '#';
         }
 
         public abstract void print();
         public abstract void update();
+        public abstract void createShape();
     }
 }

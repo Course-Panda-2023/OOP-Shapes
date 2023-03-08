@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 
 namespace Shapes
 {
-    
     class Program
     {
         static void Main(string[] args)

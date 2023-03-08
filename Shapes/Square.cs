@@ -10,15 +10,15 @@ namespace Shapes
     {
         public Square() : base() 
         {
-            this.width = 3;
+            this._width = 3;
             this.height = 3;
         }
 
-        public Square(bool fill, int size, char fillWithChar = '#')
+        public Square(bool isFilled, int size, char fillWithChar = '#')
         {
-            this.width = size;
+            this._width = size;
             this.height = size;
-            this.fill = fill;
+            this._isFilled = isFilled;
             this.fillWithChar = fillWithChar;
         }
 
@@ -26,7 +26,7 @@ namespace Shapes
         {
             set
             {
-                width = value;
+                _width = value;
                 height = value;
             }
         }
@@ -35,7 +35,7 @@ namespace Shapes
         {
             set
             {
-                width = value;
+                _width = value;
                 height = value;
             }
         }
@@ -44,7 +44,7 @@ namespace Shapes
         {
             set
             {
-                width = value;
+                _width = value;
                 height = value;
             }
         }
@@ -53,7 +53,7 @@ namespace Shapes
         {
             return $"Square: \n" +
                 $"Size: {height} \n" +
-                $"Fill: {fill}, Fill with char: {fillWithChar}";
+                $"Fill: {_isFilled}, Fill with char: {fillWithChar}";
         }
 
         public override void update()
@@ -63,9 +63,16 @@ namespace Shapes
             if (toChange)
             {
                 Console.WriteLine("Type new size:");
-                this.width = int.Parse(Console.ReadLine());
-                this.height = this.width;
+                this._width = int.Parse(Console.ReadLine());
+                this.height = this._width;
             }
+        }
+
+        public override void createShape()
+        {
+            Console.WriteLine("Type size:");
+            this.Width = int.Parse(Console.ReadLine());
+            this.Height = this._width;
         }
     }
 }

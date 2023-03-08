@@ -39,7 +39,7 @@ namespace Shapes
                 printSpaces(i);
                 for (int j = 0; j < repeatChar; j++)
                 {
-                    if (!fill && i != 0 && i != this._height && j > 0 && j < repeatChar -1)
+                    if (!_isFilled && i != 0 && i != this._height && j > 0 && j < repeatChar -1)
                         Console.Write(' ');
                     else
                         Console.Write(this.fillWithChar);
@@ -73,7 +73,15 @@ namespace Shapes
             return $"Trapezoid: \n" +
                 $"Upper base: {_upperBase} \n" +
                 $"Height: {_height} \n" +
-                $"Fill: {fill}, Fill with char: {fillWithChar}";
+                $"Fill: {_isFilled}, Fill with char: {fillWithChar}";
+        }
+
+        public override void createShape()
+        {
+            Console.WriteLine("Type upper base:");
+            this.UpperBase = int.Parse(Console.ReadLine());
+            Console.WriteLine("Type height:");
+            this.Height = int.Parse(Console.ReadLine());
         }
     }
 }

@@ -9,10 +9,10 @@ namespace Shapes
 {
     internal class Rectangle : Shape
     {
-        protected int width;
+        protected int _width;
         public int Width
         {
-            set { width = value; }
+            set { _width = value; }
         }
 
         protected int height;
@@ -23,15 +23,15 @@ namespace Shapes
         // Default Constructor
         public Rectangle() : base()
         {
-            this.width = 3;
+            this._width = 3;
             this.height = 4;
         }
 
-        public Rectangle(bool fill, int width, int height, char fillWithChar = '#')
+        public Rectangle(bool isFilled, int width, int height, char fillWithChar = '#')
         {
-            this.width = width;
+            this._width = width;
             this.height = height;
-            this.fill = fill;
+            this._isFilled = isFilled;
             this.fillWithChar = fillWithChar;
         }
         
@@ -39,13 +39,13 @@ namespace Shapes
         {
             for (int i = 0; i < this.height; i++)
             {
-                for (int j = 0; j < this.width; j++)
+                for (int j = 0; j < this._width; j++)
                 {
-                    if(this.fill)
+                    if(this._isFilled)
                         Console.Write(this.fillWithChar);
                     else if (i == 0 || i == this.height - 1)
                         Console.Write(this.fillWithChar);
-                    else if (j == 0 || j == this.width - 1)
+                    else if (j == 0 || j == this._width - 1)
                         Console.Write(this.fillWithChar);
                     else Console.Write(' ');
                 }
@@ -60,7 +60,7 @@ namespace Shapes
             if (toChange)
             {
                 Console.WriteLine("Type new width:");
-                this.width = int.Parse(Console.ReadLine()); ;
+                this._width = int.Parse(Console.ReadLine()); ;
             }
             Console.WriteLine("Do you want to change the height? y/n");
             toChange = char.Parse(Console.ReadLine()).Equals('y') ? true : false;
@@ -74,8 +74,16 @@ namespace Shapes
         public override string ToString()
         {
             return $"Rectangle: \n" +
-                $"Width: {width}, Height: {height} \n" +
-                $"Fill: {fill}, Fill with char: {fillWithChar}";
+                $"Width: {_width}, Height: {height} \n" +
+                $"Fill: {_isFilled}, Fill with char: {fillWithChar}";
+        }
+
+        public override void createShape()
+        {
+            Console.WriteLine("Type width:");
+            this.Width = int.Parse(Console.ReadLine());
+            Console.WriteLine("Type height:");
+            this.Height = int.Parse(Console.ReadLine());
         }
     }
 }

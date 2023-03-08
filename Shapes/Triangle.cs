@@ -8,17 +8,17 @@ namespace Shapes
 {
     internal class Triangle : Shape
     {
-        private int height;
+        private int _height;
         public int Height
         {
             set
             {
-                height = value;
+                _height = value;
             }
         }
         public Triangle() : base()
         {
-            this.height = 3;
+            this._height = 3;
         }
 
         private void printSpaces(int amount)
@@ -30,12 +30,12 @@ namespace Shapes
         public override void print()
         {
             int repeatChar = 1;
-            for (int i = this.height - 1; i >= 0; i--)
+            for (int i = this._height - 1; i >= 0; i--)
             {
                 printSpaces(i);
                 for (int j = 0; j < repeatChar; j++)
                 {
-                    if (!this.fill && j != 0 && j != repeatChar - 1 && i != 0)
+                    if (!this._isFilled && j != 0 && j != repeatChar - 1 && i != 0)
                         Console.Write(' ');
                     else 
                         Console.Write(this.fillWithChar);
@@ -53,15 +53,21 @@ namespace Shapes
             if (toChange)
             {
                 Console.WriteLine("Type new size:");
-                this.height = int.Parse(Console.ReadLine());
+                this._height = int.Parse(Console.ReadLine());
             }
         }
 
         public override string ToString()
         {
             return $"Triangle: \n" +
-                $"Height: {height} \n" +
-                $"Fill: {fill}, Fill with char: {fillWithChar}";
+                $"Height: {_height} \n" +
+                $"Fill: {_isFilled}, Fill with char: {fillWithChar}";
+        }
+
+        public override void createShape()
+        {
+            Console.WriteLine("Type height:");
+            this.Height = int.Parse(Console.ReadLine());
         }
     }
 }

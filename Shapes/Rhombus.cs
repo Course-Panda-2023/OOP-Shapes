@@ -8,15 +8,15 @@ namespace Shapes
 {
     internal class Rhombus : Shape
     {
-        private int halfMainHeight;
+        private int _halfMainHeight;
         public int HalfHeight
         {
-            set { halfMainHeight = value; }
+            set { _halfMainHeight = value; }
         }
 
         public Rhombus() : base()
         {
-            this.halfMainHeight = 3;
+            this._halfMainHeight = 3;
         }
         private void printSpaces(int amount)
         {
@@ -27,12 +27,12 @@ namespace Shapes
         public override void print()
         {
             int repeatChar = 1;
-            for (int i = this.halfMainHeight - 1; i >= 0; i--)
+            for (int i = this._halfMainHeight - 1; i >= 0; i--)
             {
                 printSpaces(i);
                 for (int j = 0; j < repeatChar; j++)
                 {
-                    if (!this.fill && j != 0 && j != repeatChar - 1)
+                    if (!this._isFilled && j != 0 && j != repeatChar - 1)
                         Console.Write(' ');
                     else
                         Console.Write(this.fillWithChar);
@@ -42,12 +42,12 @@ namespace Shapes
                 Console.WriteLine();
             }
             repeatChar -= 4;
-            for (int i = 1; i < this.halfMainHeight; i++)
+            for (int i = 1; i < this._halfMainHeight; i++)
             {
                 printSpaces(i);
                 for (int j = repeatChar - 1; j >= 0; j--)
                 {
-                    if (!this.fill && j != 0 && j != repeatChar - 1)
+                    if (!this._isFilled && j != 0 && j != repeatChar - 1)
                         Console.Write(' ');
                     else
                         Console.Write(this.fillWithChar);
@@ -66,15 +66,21 @@ namespace Shapes
             if (toChange)
             {
                 Console.WriteLine("Type new half height:");
-                this.halfMainHeight = int.Parse(Console.ReadLine());
+                this._halfMainHeight = int.Parse(Console.ReadLine());
             }
         }
 
         public override string ToString()
         {
             return $"Rhombus: \n" +
-                $"half height: {this.halfMainHeight} \n" +
-                $"Fill: {fill}, Fill with char: {fillWithChar}";
+                $"half height: {this._halfMainHeight} \n" +
+                $"Fill: {_isFilled}, Fill with char: {fillWithChar}";
+        }
+
+        public override void createShape()
+        {
+            Console.WriteLine("Type half height:");
+            this.HalfHeight = int.Parse(Console.ReadLine());
         }
     }
 }
