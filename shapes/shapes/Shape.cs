@@ -18,11 +18,11 @@ namespace shapes
 
         public void DrawLine(int length, int offset = 0)
         {
-            Console.WriteLine((new string(' ',offset*2) + new string(c , length)).Replace(c.ToString(), c.ToString()+" "));
+            Console.WriteLine((new string(' ',offset * 2) + new string(c , length)).Replace(c.ToString(), c.ToString() + " "));
         }
         public void DrawLineEmpty(int length, int offset = 0)
         {
-            Console.WriteLine(new string(' ', offset*2) + c + new string(' ', length*2-3) + c);
+            Console.WriteLine(new string(' ', offset * 2) + c + new string(' ', length * 2 - 3) + c);
         }
         internal abstract void Draw();
         public override string ToString()

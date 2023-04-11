@@ -55,7 +55,7 @@ namespace shapes
             {
                 double delta = ((double)i * ((double)width - 1.0) / halfCeiling);
                 int len = (int)(width - delta);
-                if (fill || i == halfCeiling- 1)
+                if (fill || i == halfCeiling - 1)
                     DrawLine(len, (int)((width - len) / 2));
                 else
                     DrawLineEmpty(len, (int)((width - len) / 2));
@@ -65,7 +65,7 @@ namespace shapes
             {
                 double delta = ((double)i * ((double)width - 1.0) / halfFloor);
                 int len = (int)(width - delta);
-                if (fill || i == halfFloor-1)
+                if (fill || i == halfFloor - 1)
                     DrawLine(len, (int)((width - len) / 2));
                 else
                     DrawLineEmpty(len, (int)((width - len) / 2));

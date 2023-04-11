@@ -1,8 +1,10 @@
 ﻿using shapes;
 
-CLIwrapper savtaShly = new CLIwrapper();
+CLIwrapper CLI1 = new CLIwrapper();
+
 while(!CLIwrapper.exit)
-    savtaShly.mainMenu();
+    CLI1.mainMenu();
+
 namespace shapes
 {
     public class Program

@@ -88,7 +88,7 @@ namespace shapes
         private void EditShapeMenu()
         {
             container.PrintAll();
-            Console.WriteLine("Edit shape with the format: [key, param_name, param_new_value]");
+            Console.WriteLine("Edit shape with this format: [key, param_name, param_new_value]");
             string? str = Console.ReadLine();
             if (str != null)
                 try
