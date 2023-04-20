@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\guyal.DESKTOP-S2VGE0F\\Source\\Repos\\Shapes\\Shapes\\Shapes.csproj": {}
+    "C:\\Users\\guyal.DESKTOP-S2VGE0F\\Source\\Repos\\OOP-Shapes\\Shapes\\Shapes.csproj": {}
   },
   "projects": {
-    "C:\\Users\\guyal.DESKTOP-S2VGE0F\\Source\\Repos\\Shapes\\Shapes\\Shapes.csproj": {
+    "C:\\Users\\guyal.DESKTOP-S2VGE0F\\Source\\Repos\\OOP-Shapes\\Shapes\\Shapes.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\guyal.DESKTOP-S2VGE0F\\Source\\Repos\\Shapes\\Shapes\\Shapes.csproj",
+        "projectUniqueName": "C:\\Users\\guyal.DESKTOP-S2VGE0F\\Source\\Repos\\OOP-Shapes\\Shapes\\Shapes.csproj",
         "projectName": "Shapes",
-        "projectPath": "C:\\Users\\guyal.DESKTOP-S2VGE0F\\Source\\Repos\\Shapes\\Shapes\\Shapes.csproj",
+        "projectPath": "C:\\Users\\guyal.DESKTOP-S2VGE0F\\Source\\Repos\\OOP-Shapes\\Shapes\\Shapes.csproj",
         "packagesPath": "C:\\Users\\guyal.DESKTOP-S2VGE0F\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\guyal.DESKTOP-S2VGE0F\\Source\\Repos\\Shapes\\Shapes\\obj\\",
+        "outputPath": "C:\\Users\\guyal.DESKTOP-S2VGE0F\\Source\\Repos\\OOP-Shapes\\Shapes\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\guyal.DESKTOP-S2VGE0F\\AppData\\Roaming\\NuGet\\NuGet.Config",
